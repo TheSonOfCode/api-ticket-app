@@ -6,14 +6,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-}).then(() => {
-  console.log("Connexion réussie à MongoDB Atlas !");
-}).catch(err => {
-  console.error("Erreur de connexion à MongoDB Atlas :", err);
-});
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => {
+    console.log("Connexion réussie à MongoDB Atlas !");
+  }).catch(err => {
+    console.error("Erreur de connexion à MongoDB Atlas :", err);
+  });
 
 
 
