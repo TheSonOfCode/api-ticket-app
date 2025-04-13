@@ -88,12 +88,6 @@ app.delete('/api/reservations/:id', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
-
-
 
 // Authentication
 const UserSchema = new mongoose.Schema({
@@ -198,3 +192,11 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: 'Une erreur est survenue sur le serveur' });
 });
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+
+
+
