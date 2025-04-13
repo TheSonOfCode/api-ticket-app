@@ -103,7 +103,7 @@ const UserSchema = new mongoose.Schema({
   
   const User = mongoose.model('User', UserSchema);
 
-  const bcrypt = require('bcrypt');
+  const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 app.post('/api/inscription', async (req, res) => {
