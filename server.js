@@ -6,7 +6,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb+srv://TheSonOfCodeAtlas:RXjTlJzBaN9L9D9l@cluster0.5bgxpqv.mongodb.net/ticket-reservation', {
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }).then(() => {
